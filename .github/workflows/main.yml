@@ -1,17 +1,14 @@
 name: 🦕 Deploy Docusaurus to GitHub Pages
 on: [push]
-
-with:
+env:
     DOCUACTIONS_TOKEN: ${{ secrets.DOCUACTIONS_TOKEN }}
     DOCUACTIONS_DEPLOYMENT: ${{ secrets.DOCUACTIONS_DEPLOYMENT }}
-env:
-    DOCUACTIONS_TOKEN: inputs.DOCUACTIONS_TOKEN
-    DOCUACTIONS_DEPLOYMENT: inputs.DOCUACTIONS_DEPLOYMENT
+
         
 jobs:
   deploy:
+    
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: docuactions/github-pages@main
-           
+    steps: 
+        - uses: actions/checkout@v2
+        - uses: docuactions/github-pages@main
